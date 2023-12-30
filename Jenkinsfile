@@ -25,7 +25,7 @@ pipeline {
                     nexusUrl: 'http://172.31.14.165:8081', // Ensure correct URL and port
                     nexusVersion: 'nexus3',
                     protocol: 'http', 
-                    repository: 'http://13.201.82.132:8081/repository/hello-world/', 
+                    repository: 'http://52.66.111.66:8081/repository/hello-world/', 
                     version: '1.0.1'
                 }
             }
