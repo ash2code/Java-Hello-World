@@ -10,25 +10,6 @@ pipeline {
                 sh 'mvn clean package'
             }
         }
-        
-        stage("add artifact to nexus") {
-            steps {
-                script {
-                    nexusArtifactUploader artifacts: [[
-                        artifactId: 'hello-world',
-                        classifier: '', 
-                        file: 'target/hello-world-1.0.1.jar', 
-                        type: 'jar'
-                    ]], 
-                    credentialsId: 'nexus-credentials', // Ensure this matches the ID you set in Jenkins
-                    groupId: 'com.example', 
-                    nexusUrl: 'http://172.31.14.165:8081', // Ensure correct URL and port
-                    nexusVersion: 'nexus3',
-                    protocol: 'http', 
-                    repository: 'http://52.66.111.66:8081/repository/Hello-World/', 
-                    version: '1.0.1'
-                }
-            }
-        }
     }
 }
+        
